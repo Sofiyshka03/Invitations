@@ -53,7 +53,33 @@ header p {
     margin-bottom: 40px;
     max-width: 500px;
 }
+/* Стили для бегущей строки */
+/*.marquee {
+    position: absolute;
+    bottom: 20px; !* Расположение строки внизу *!
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 2; !* Над полупрозрачным наложенным слоем *!
+}
 
+.marquee div {
+    display: inline-block;
+    padding-left: 100%; !* Начальное позиционирование текстов *!
+    animation: scroll 15s linear infinite;
+    font-size: 4em;
+    color: white;
+}
+
+!* Анимация для эффекта прокрутки *!
+@keyframes scroll {
+    0% {
+        transform: translateX(0); !* Начальная позиция *!
+    }
+    100% {
+        transform: translateX(-100%); !* Завершение позиции, уйдет на половину ширины строки *!
+    }
+}*/
 /* Кнопка с прозрачным фоном и белой рамкой */
 .cta-button {
     background-color: transparent;
@@ -105,16 +131,35 @@ nav ul li a {
     margin: 20px;
     text-align: center;
     background-color: white;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     border-radius: 10px;
 }
 
 .product img {
     width: 100%;
-    height: 300px;
+    height: 350px;
     object-fit: cover;
     margin-bottom: 15px;
+}
+
+.prod-button {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: rgb(119, 107, 93);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 30px; /* Более закругленные края */
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.prod-button:hover {
+    background-color: white;
+    color: rgb(119, 107, 93);
+    border-color: rgb(119, 107, 93);
 }
 
 h2{
@@ -158,11 +203,86 @@ footer {
 /*        background: url("pic1.png");*/
 /*    }*/
 /*}*/
+/* Увеличение размера иконок */
+.contact-links i {
+    font-size: 2em;
+}
 
 @media (max-width: 768px) {
     header {
         background-position: center center;
         background-size:cover;
+        font-size: 70%;
         /*padding: 150px 0;*/
+    }
+    .product {
+        width: 140px; /* уменьшено на 70% от 200px */
+        padding: 14px; /* уменьшено на 70% от 20px */
+        margin: 14px; /* уменьшено на 70% от 20px */
+        font-size: 70%;
+        /*height: 200px;*/
+    }
+
+    .product img {
+        width: 100%;
+        height: 200px;
+    }
+    header h1,header p{
+        margin-left: 20px;
+        max-width: 350px;
+    }
+/*
+    .product h3 {
+        font-size: 0.84rem; !* уменьшено на 70% от 1.2rem *!
+    }
+
+    .product p {
+        font-size: 0.7rem; !* уменьшено на 70% от 1rem *!
+    }*/
+
+    .prod-button {
+        padding: 7px 10.5px; /* уменьшено на 70% от 10px 15px */
+        font-size: 0.63rem; /* уменьшено на 70% от 0.9rem */
+    }
+
+/*    header h1 {
+        font-size: 1.4rem; !* уменьшено для заголовка *!
+    }
+
+    header p {
+        font-size: 0.9rem; !* уменьшено для подзаголовка *!
+    }*/
+
+    .cta-button {
+        padding: 7px 10.5px; /* уменьшено на 70% */
+        font-size: 0.84rem; /* уменьшено на 70% */
+        margin-left: 20px;
+    }
+
+    .contact-links i {
+        font-size: 1.4rem; /* увеличиваем иконки, чтобы были видимыми */
+        margin-right: 10px;
+    }
+    /*body{*/
+    /*    font-size: 70%;*/
+    /*}*/
+    .product-section{
+        padding-bottom:0;
+    }
+/*    .product {
+        width: 140px; !* уменьшено на 70% от 200px *!
+        height: 200px;
+        padding: 14px; !* уменьшено на 70% от 20px *!
+        margin: 14px; !* уменьшено на 70% от 20px *!
+    }
+    .product-section{
+        padding-bottom:0;
+    }
+    .product img {
+        width: 100%;
+        height: auto;
+    }*/
+    h2{
+        font-size: 2em;
     }
 }
